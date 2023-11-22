@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+    background-color: pink;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.atas {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px 25px;
+}
+
+.atas h3 {
+    color: #fff;
+}
+
+.atas ul {
+    margin-left: 40px;
+}
+
+header h1 {
+    font-size: 2.0em;
+}
+
+section {
+    background-color: #fff;
+    margin: 20px 200px;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0.1);
+}
+
+section h3 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+.gambar {
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+ul,li{
+    margin-bottom: 10px;
+}
+
+form{
+    margin-top:20px;
+}
+
+form label{
+    display: block;
+    font-weight: bold;
+}
+
+form{
+    margin-top:20px;
+}
+
+form label{
+    display: block;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"],
+form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    background-color: pink;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}

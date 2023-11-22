@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LATIHAN PRA UTS</title>
+    <link rel="stylesheet" href="styleuts.css">
+</head>
+<body>
+    <header>
+        <p>Data krayawan</p>
+        <p>Master Data</p>
+        <p>Tambah Data</p>
+    </header>
+
+ <main>
+     <h1>FORM ENTRY DATA PEGAWAI</h1>
+
+     <section>
+        <form>
+
+            <label for="nik">Nik:</label>
+            <input type="number" ><br><br>
+
+            <label for="nama">Nama:</label>
+            <input type="text" >
+            
+            <label for="tempat">Tempat lahir:</label>
+            <input type="text" >
+
+            <label for="tanggal">Tanggal lahir:</label>
+            <input type="date" >
+                                    
+            <label for= "Alamat">Alamat:</label>
+            <textarea id="Alamat" name="pesan" rows="4" cols="50"></textarea>
+
+            <label for="telepon">No Telepon:</label>
+            <input type="number" >
+
+            <label for="jabatan">Jabatan:</label>
+            <input type="text" list="jabatan" name="jabatan" >
+            <datalist>
+                <option value="Ceo">
+                <option value="Manager">
+                <option value="Sekertaris">
+            </datalist>
+
+            <label for="telepon">Status:</label>
+            <input type="text" list="status" name="status" ><br><br>
+            <datalist>
+                <option value="Sudah menikah">
+                <option value="Belum menikah">
+            </datalist>
+     
+            <input type="submit" value="Kirim">
+         
+            <input type="submit" value="batal">
+        </form>
+        </section>      
+ </main>
+</body>
+</html>
