@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(img/bg.jpg);
+            background-size: cover;
+        }
+
+        .center {
+            text-align: center;
+            color: black;
+            font-size: large;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <title>Validation Form</title>
+</head>
+
+<body>
+
+    <div class="center">
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name..." required maxlength="30"><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="email@gmail.com" required><br>
+
+            <label for="departureTime">Departure Time:</label>
+            <input type="text" id="departureTime" name="departureTime" placeholder="Example 12:00" required
+                pattern="(?:[01]\d|2[0-3]):[0-5]\d"><br>
+
+            <label for="numTickets">Number of Tickets:</label>
+            <input type="number" id="numTickets" name="numTickets" placeholder="1-10" required min="1" max="10"><br>
+
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Reset previous error messages
+            clearErrors();
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var departureTime = document.getElementById("departureTime").value;
+            var numTickets = document.getElementById("numTickets").value;
+
+            // Validation checks
+            var isValid = true;
+
+            if (name.length > 30) {
+                displayError("Name must be 30 characters or less.");
+                isValid = false;
+            }
+
+            // Simple email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                displayError("Invalid email format.");
+                isValid = false;
+            }
+
+            // Simple 24-hour time format validation
+            var timeRegex = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+            if (!timeRegex.test(departureTime)) {
+                displayError("Invalid time format. Use Example time 12:00.");
+                isValid = false;
+            }
+
+            // Integer between 1-10 validation
+            if (numTickets < 1 || numTickets > 10 || isNaN(numTickets)) {
+                displayError("Number of tickets must be between 1 and 10.");
+                isValid = false;
+            }
+
+            // If all checks pass, display the form data
+            if (isValid) {
+                displayResult("Name: " + name + "<br>Email: " + email + "<br>Departure Time: " + departureTime + "<br>Number of Tickets: " + numTickets);
+            }
+        }
+
+        function displayError(message) {
+            var errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            errorDiv.innerHTML = message;
+            document.getElementById("result").appendChild(errorDiv);
+        }
+
+        function displayResult(message) {
+            document.getElementById("result").innerHTML = message;
+        }
+
+        function clearErrors() {
+            var errorElements = document.getElementsByClassName("error");
+            for (var i = 0; i < errorElements.length; i++) {
+                errorElements[i].remove();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
